@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>乘法表</title>
+	</head>
+	<style type="text/css">
+		table {
+			width: 1000px;
+			border-collapse: collapse;
+		}
+
+		table th {
+			border: 1px solid black;
+		}
+
+		#zuoye2 td {
+			padding: 10px;
+			border: 1px solid black;
+		}
+
+		#zuoye3 {
+			font-size: 30px;
+		}
+	</style>
+	<body>
+		<h1>作业1</h1>
+
+		<script>
+			// 作业一
+			document.write("<table>")
+			for (var x = 1; x <= 9; x++) {
+				document.write("<tr>");
+				for (var y = 1; y <= x; y++) {
+					document.write("<th>" + y + "x" + x + "=" + y * x + "</th>");
+				}
+			}
+			document.write("</table>");
+			document.write("<hr />")
+			// 作业二
+			document.write('<h1>作业2</h1>');
+			document.write('<table cellspacing = 0 id="zuoye2">');
+			for (let i = 0; i <= 13; i++) {
+				document.write('<tr>');
+				for (let j = 0; j <= 13; j++) {
+					document.write('<td>');
+					if (i == 0 && j == 0) {
+						document.write('x');
+					} else if (i == 0) {
+						document.write(`${j - 1}`);
+					} else if (j == 0) {
+						document.write(`${i - 1}`);
+					} else {
+						document.write(`${(i - 1) * (j - 1)}`);
+					}
+					document.write('</td>');
+				}
+				document.write('</tr>');
+			}
+			document.write('</table>');
+			document.querySelector('table').style.borderCollapse = 'collapse';
+			document.write('<hr>')
+			// 作业3
+			document.write("<h1>第三题</h1>");
+			let o = 0;
+			for (let p = 0; p < 100; p++) {
+				if (p / 10 < 1) {
+					document.write("0" + p + " ");
+					o++;
+				} else {
+					document.write(p + " ");
+					o++;
+				}
+				if (o % 10 == 0) {
+					document.write("</br>");
+				}
+			};
+			// 作业4
+			document.write('<h1>作业4</h1>');
+			let fa = 0,
+				fb = 0,
+				fc = 0;
+			for (let i = 1; i <= 100; i++) {
+				if (i < 10) {
+					document.write('0');
+				}
+				document.write(i);
+				if (i % 5 == 0 && i % 3 == 0) {
+					document.write('C');
+					fc++;
+				} else if (i % 5 == 0) {
+					document.write('B');
+					fb++;
+				} else if (i % 3 == 0) {
+					document.write('A');
+					fa++;
+				}
+				document.write(' ');
+				if (i % 10 == 0) {
+					document.write('<br>');
+				}
+			}
+			document.write(`A有${fa}个，B有${fb}个，C有${fc}个`);
+			document.write('<hr>');
+			// 作业5
+			document.write('<h1>作业5</h1>');
+			document.write('<h2>小题1</h2>');
+			let a = 1;
+			let b = 2;
+			a < b ? document.write('a小于b') : a > b ? document.write('a大于b') : document.write('a等于b');
+			document.write('<h2>小题2</h2>');
+			document.write('结果是3，因为他们都是数字类型，转换为字符类型就是12了');
+		</script>
+	</body>
+</html>
